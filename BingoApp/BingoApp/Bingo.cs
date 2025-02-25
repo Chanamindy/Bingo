@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace BingoApp
 {
-    public partial class Form1 : Form
+    public partial class frmBingo : Form
     {
         enum GameStatusEnum { NotStarted, PickModeBoard, Playing, Winner };
         GameStatusEnum gamestatus = GameStatusEnum.NotStarted;
@@ -28,7 +29,8 @@ namespace BingoApp
 
         List<RadioButton> lstoptYesNo;
         List<RadioButton> lstoptHowBoardsPicked;
-        public Form1()
+
+        public frmBingo()
         {
             InitializeComponent();
 
@@ -82,59 +84,20 @@ namespace BingoApp
             optLetters.Click += OptLetters_Click;
             optComputerBoardP1.Click += OptComputerBoardP1_Click;
             optComputerBoardP2.Click += OptComputerBoardP2_Click;
+            optIPickBoardP1.Click += OptIPickBoardP1_Click;
+            optIPickBoardP2.Click += OptIPickBoardP2_Click;
             DisplayGameStatus();
-        }
-
-        private void OptLetters_Click(object? sender, EventArgs e)
-        {
-            gamemode = GameModeEnum.Letter;
-            DisplayTextbtnPick();
-        }
-
-        private void OptNumbers_Click(object? sender, EventArgs e)
-        {
-            gamemode = GameModeEnum.Number;
-            DisplayTextbtnPick();
-        }
-
-        private void OptNumbersLetters_Click(object? sender, EventArgs e)
-        {
-            btnPick.Text = "Pick a " + gamemode.ToString();
-        }
-
-        private void DisplayTextbtnPick()
-        {
-            btnPick.Text = "Pick a " + gamemode.ToString();
-        }
-
-        private void PickNumberLetter()
-        {
-            if (gamestatus == GameStatusEnum.Playing)
-            {
-                if (optNumbers.Checked == true)
-                {
-                    Random rnd = new();
-                    int n = rnd.Next(0, 51);
-                    string s = n.ToString();
-                    lblChosenNumOrLetter.Text = s;
-                }
-                else if (optLetters.Checked == true)
-                {
-                    Random rnd = new();
-                    char randomLetter = (char)rnd.Next(65, 91);
-                    Console.WriteLine(randomLetter);
-                    lblChosenNumOrLetter.Text = randomLetter.ToString();
-                }
-            }
         }
 
         private void DisplayGameStatus()
         {
             string msg = "Click Start to begin the Game.";
+            string modemsg = gamemode == GameModeEnum.Number ? "Pick from Numbers 1-50." : "Pick any Letter.";
+
             switch (gamestatus)
             {
                 case GameStatusEnum.PickModeBoard:
-                    msg = "Choose Game Mode and Board. Click 'Boards Are ready' once both boards are filled in.";
+                    msg = "Choose Game Mode and Board. " + modemsg + " Click 'Boards Are ready' once both boards are filled in.";
                     break;
                 case GameStatusEnum.Playing:
                     msg = "Playing";
@@ -143,8 +106,21 @@ namespace BingoApp
                     msg = "Winner is: " + Winner;
                     break;
             }
-
             lblmsg.Text = msg;
+        }
+
+        private void DisplayTextbtnPick()
+        {
+            btnPick.Text = "Pick a " + gamemode.ToString();
+        }
+        private void SetListReadOnly(List<TextBox> lst, bool TrueOrFalse)
+        {
+            lst.ForEach(txt => txt.ReadOnly = TrueOrFalse);
+        }
+
+        private void SetListChecked(List<RadioButton> lst, bool TrueOrFalse)
+        {
+            lst.ForEach(opt => opt.Checked = TrueOrFalse);
         }
 
         private void StartTheGame()
@@ -155,15 +131,61 @@ namespace BingoApp
             SetBingoBox(lsttxtPlayer1);
             EnableAndSetBackColorForBoxes(lsttxtPlayer2);
             SetBingoBox(lsttxtPlayer2);
-            lstoptHowBoardsPicked.ForEach(opt => opt.Checked = false);
+            SetListChecked(lstoptHowBoardsPicked, false);
+            SetListChecked(lstoptYesNo, false);
             lstoptYesNo.ForEach(opt => opt.Enabled = false);
             lblChosenNumOrLetter.Text = "";
         }
         
+        private void BoardsAreReady()
+        {
+            if ((lsttxtPlayer1.Where(txt => txt.Text == "").Count() == 0) && (lsttxtPlayer2.Where(txt => txt.Text == "").Count() == 0) && gamestatus == GameStatusEnum.PickModeBoard)
+            {
+                gamestatus = GameStatusEnum.Playing;
+                DisplayGameStatus();
+
+                SetListReadOnly(lsttxtPlayer1, true);
+                SetListReadOnly(lsttxtPlayer2, true);
+                lstoptYesNo.ForEach(opt => opt.Enabled = true);
+            }
+        }
+
+        private void PickNumberLetter()
+        {
+            if (gamestatus == GameStatusEnum.Playing)
+            {
+                if (optNumbers.Checked == true)
+                {
+                    lblChosenNumOrLetter.Text = GetRandomNumber();
+                }
+                else if (optLetters.Checked == true)
+                {
+                    lblChosenNumOrLetter.Text = GetRandomLetter();
+                }
+            }
+        }
+
+        private string GetRandomNumber()
+        {
+            Random rnd = new();
+            int n = rnd.Next(0, 51);
+            string s = n.ToString();
+            return s;
+        }
+
+        private string GetRandomLetter()
+        {
+            Random rnd = new();
+            char randomLetter = (char)rnd.Next(65, 91);
+            string s = randomLetter.ToString();
+            return s;
+        }
+
         private void EnableAndSetBackColorForBoxes(List<TextBox> lst)
         {
             lst.ForEach(txt => { txt.Enabled = true; txt.Text = ""; txt.BackColor = defaultbackcolor; });
         }
+
         private void SetBingoBox(List<TextBox> lst)
         {
             lst[12].Text = "Bingo";
@@ -207,61 +229,90 @@ namespace BingoApp
                     gamestatus = GameStatusEnum.Winner;
                     Winner = player;
                     DisplayGameStatus();
-                    lst.ForEach(txt => txt.BackColor = Color.Green);/////////Change this
+                    lst.ForEach(txt => { txt.BackColor = Color.Turquoise; txt.ForeColor = Color.Purple; });
                 }
             }
+        }
+
+        private void OptNumbers_Click(object? sender, EventArgs e)
+        {
+            gamemode = GameModeEnum.Number;
+            DisplayTextbtnPick();
+            DisplayGameStatus();
+        }
+
+        private void OptLetters_Click(object? sender, EventArgs e)
+        {
+            gamemode = GameModeEnum.Letter;
+            DisplayTextbtnPick();
+            DisplayGameStatus();
+        }
+
+        private bool IsGameStatusPick()
+        {
+            return gamestatus == GameStatusEnum.PickModeBoard;
         }
 
         private void OptComputerBoardP2_Click(object? sender, EventArgs e)
         {
-            if (gamemode == GameModeEnum.Number)
+            if (IsGameStatusPick())
             {
-                for (int i = 0; i < 25; i++)
+                if (gamemode == GameModeEnum.Number)
                 {
-                    Random rnd = new();
-                    int n = rnd.Next(0, 51);
-                    string s = n.ToString();
-                    lsttxtPlayer2[i].Text = s;
+                    for (int i = 0; i < 25; i++)
+                    {
+                        lsttxtPlayer2[i].Text = GetRandomNumber();
+                    }
                 }
-            }
-            else if (gamemode == GameModeEnum.Letter)
-            {
-                for (int i = 0; i < 25; i++)
+                else if (gamemode == GameModeEnum.Letter)
                 {
-                    Random rnd = new();
-                    char randomLetter = (char)rnd.Next(65, 91);
-                    Console.WriteLine(randomLetter);
-                    lsttxtPlayer2[i].Text = randomLetter.ToString();
+                    for (int i = 0; i < 25; i++)
+                    {
+                        lsttxtPlayer2[i].Text = GetRandomLetter();
+                    }
                 }
+                txtBox13P2.Text = "Bingo!";
+                SetListReadOnly(lsttxtPlayer2, true);
             }
-            txtBox13P2.Text = "Bingo!";
-            lsttxtPlayer2.ForEach(txt => txt.ReadOnly = true);
         }
 
         private void OptComputerBoardP1_Click(object? sender, EventArgs e)
         {
-            if (gamemode == GameModeEnum.Number)
+            if (IsGameStatusPick())
             {
-                for (int i = 0; i < 25; i++)
+                if (gamemode == GameModeEnum.Number)
                 {
-                    Random rnd = new();
-                    int n = rnd.Next(0, 51);
-                    string s = n.ToString();
-                    lsttxtPlayer1[i].Text = s;
+                    for (int i = 0; i < 25; i++)
+                    {
+                        lsttxtPlayer1[i].Text = GetRandomNumber();
+                    }
                 }
+                else if (gamemode == GameModeEnum.Letter)
+                {
+                    for (int i = 0; i < 25; i++)
+                    {
+                        lsttxtPlayer1[i].Text = GetRandomLetter();
+                    }
+                }
+                txtBox13P1.Text = "Bingo!";
+                SetListReadOnly(lsttxtPlayer1, true);
             }
-            else if (gamemode == GameModeEnum.Letter)
+        }
+
+        private void OptIPickBoardP2_Click(object? sender, EventArgs e)
+        {
+            if (IsGameStatusPick())
             {
-                for (int i = 0; i < 25; i++)
-                {
-                    Random rnd = new();
-                    char randomLetter = (char)rnd.Next(65, 91);
-                    Console.WriteLine(randomLetter);
-                    lsttxtPlayer1[i].Text = randomLetter.ToString();
-                }
+                lsttxtPlayer2.ForEach(txt => txt.Text = "");
             }
-            txtBox13P1.Text = "Bingo!";
-            lsttxtPlayer1.ForEach(txt => txt.ReadOnly = true);
+        }
+
+        private void OptIPickBoardP1_Click(object? sender, EventArgs e)
+        {
+            if (IsGameStatusPick())
+            {
+                lsttxtPlayer1.ForEach(txt => txt.Text = "");
+            }
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)
@@ -271,15 +322,7 @@ namespace BingoApp
 
         private void BtnBoardsAreReady_Click(object? sender, EventArgs e)
         {
-            if ((lsttxtPlayer1.Where(txt => txt.Text == "").Count() == 0) && (lsttxtPlayer2.Where(txt => txt.Text == "").Count() == 0) && gamestatus == GameStatusEnum.PickModeBoard)
-            {
-                gamestatus = GameStatusEnum.Playing;
-                DisplayGameStatus();
-
-                lsttxtPlayer1.ForEach(txt => txt.ReadOnly = true);
-                lsttxtPlayer2.ForEach(txt => txt.ReadOnly = true);
-                lstoptYesNo.ForEach(opt => opt.Enabled = true);
-            }
+            BoardsAreReady();
         }
 
         private void BtnPick_Click(object? sender, EventArgs e)
@@ -291,8 +334,3 @@ namespace BingoApp
         }
     }
 }
-
-//Winner is a full board?
-//Added a button
-//Range to choose numbers
-//When start the game Computer choose should be unchecked.

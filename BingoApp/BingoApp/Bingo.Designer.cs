@@ -1,6 +1,6 @@
 ﻿namespace BingoApp
 {
-    partial class Form1
+    partial class frmBingo
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBingo));
             tblMain = new TableLayoutPanel();
             tblToolBar = new TableLayoutPanel();
             btnStart = new Button();
@@ -183,10 +184,12 @@
             // 
             lblmsg.AutoSize = true;
             lblmsg.Dock = DockStyle.Fill;
+            lblmsg.Font = new Font("Poor Richard", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblmsg.Location = new Point(137, 0);
             lblmsg.Name = "lblmsg";
             lblmsg.Size = new Size(842, 85);
             lblmsg.TabIndex = 1;
+            lblmsg.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // optNumbers
             // 
@@ -267,6 +270,7 @@
             txtBox1P1.Name = "txtBox1P1";
             txtBox1P1.Size = new Size(90, 66);
             txtBox1P1.TabIndex = 0;
+            txtBox1P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox2P1
             // 
@@ -276,6 +280,7 @@
             txtBox2P1.Name = "txtBox2P1";
             txtBox2P1.Size = new Size(90, 66);
             txtBox2P1.TabIndex = 1;
+            txtBox2P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox3P1
             // 
@@ -285,6 +290,7 @@
             txtBox3P1.Name = "txtBox3P1";
             txtBox3P1.Size = new Size(90, 66);
             txtBox3P1.TabIndex = 2;
+            txtBox3P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox4P1
             // 
@@ -294,6 +300,7 @@
             txtBox4P1.Name = "txtBox4P1";
             txtBox4P1.Size = new Size(90, 66);
             txtBox4P1.TabIndex = 3;
+            txtBox4P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox5P1
             // 
@@ -303,6 +310,7 @@
             txtBox5P1.Name = "txtBox5P1";
             txtBox5P1.Size = new Size(91, 66);
             txtBox5P1.TabIndex = 4;
+            txtBox5P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox6P1
             // 
@@ -312,6 +320,7 @@
             txtBox6P1.Name = "txtBox6P1";
             txtBox6P1.Size = new Size(90, 66);
             txtBox6P1.TabIndex = 5;
+            txtBox6P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox7P1
             // 
@@ -321,6 +330,7 @@
             txtBox7P1.Name = "txtBox7P1";
             txtBox7P1.Size = new Size(90, 66);
             txtBox7P1.TabIndex = 6;
+            txtBox7P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox8P1
             // 
@@ -330,6 +340,7 @@
             txtBox8P1.Name = "txtBox8P1";
             txtBox8P1.Size = new Size(90, 66);
             txtBox8P1.TabIndex = 7;
+            txtBox8P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox9P1
             // 
@@ -339,6 +350,7 @@
             txtBox9P1.Name = "txtBox9P1";
             txtBox9P1.Size = new Size(90, 66);
             txtBox9P1.TabIndex = 8;
+            txtBox9P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox10P1
             // 
@@ -348,6 +360,7 @@
             txtBox10P1.Name = "txtBox10P1";
             txtBox10P1.Size = new Size(91, 66);
             txtBox10P1.TabIndex = 9;
+            txtBox10P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox11P1
             // 
@@ -357,6 +370,7 @@
             txtBox11P1.Name = "txtBox11P1";
             txtBox11P1.Size = new Size(90, 66);
             txtBox11P1.TabIndex = 10;
+            txtBox11P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox12P1
             // 
@@ -366,6 +380,7 @@
             txtBox12P1.Name = "txtBox12P1";
             txtBox12P1.Size = new Size(90, 66);
             txtBox12P1.TabIndex = 11;
+            txtBox12P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox13P1
             // 
@@ -388,6 +403,7 @@
             txtBox14P1.Name = "txtBox14P1";
             txtBox14P1.Size = new Size(90, 66);
             txtBox14P1.TabIndex = 13;
+            txtBox14P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox15P1
             // 
@@ -397,6 +413,7 @@
             txtBox15P1.Name = "txtBox15P1";
             txtBox15P1.Size = new Size(91, 66);
             txtBox15P1.TabIndex = 14;
+            txtBox15P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox16P1
             // 
@@ -406,6 +423,7 @@
             txtBox16P1.Name = "txtBox16P1";
             txtBox16P1.Size = new Size(90, 66);
             txtBox16P1.TabIndex = 15;
+            txtBox16P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox17P1
             // 
@@ -415,6 +433,7 @@
             txtBox17P1.Name = "txtBox17P1";
             txtBox17P1.Size = new Size(90, 66);
             txtBox17P1.TabIndex = 16;
+            txtBox17P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox18P1
             // 
@@ -424,6 +443,7 @@
             txtBox18P1.Name = "txtBox18P1";
             txtBox18P1.Size = new Size(90, 66);
             txtBox18P1.TabIndex = 17;
+            txtBox18P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox19P1
             // 
@@ -433,6 +453,7 @@
             txtBox19P1.Name = "txtBox19P1";
             txtBox19P1.Size = new Size(90, 66);
             txtBox19P1.TabIndex = 18;
+            txtBox19P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox20P1
             // 
@@ -442,6 +463,7 @@
             txtBox20P1.Name = "txtBox20P1";
             txtBox20P1.Size = new Size(91, 66);
             txtBox20P1.TabIndex = 19;
+            txtBox20P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox21P1
             // 
@@ -451,6 +473,7 @@
             txtBox21P1.Name = "txtBox21P1";
             txtBox21P1.Size = new Size(90, 67);
             txtBox21P1.TabIndex = 20;
+            txtBox21P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox22P1
             // 
@@ -460,6 +483,7 @@
             txtBox22P1.Name = "txtBox22P1";
             txtBox22P1.Size = new Size(90, 67);
             txtBox22P1.TabIndex = 21;
+            txtBox22P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox23P1
             // 
@@ -469,6 +493,7 @@
             txtBox23P1.Name = "txtBox23P1";
             txtBox23P1.Size = new Size(90, 67);
             txtBox23P1.TabIndex = 22;
+            txtBox23P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox24P1
             // 
@@ -478,6 +503,7 @@
             txtBox24P1.Name = "txtBox24P1";
             txtBox24P1.Size = new Size(90, 67);
             txtBox24P1.TabIndex = 23;
+            txtBox24P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox25P1
             // 
@@ -487,6 +513,7 @@
             txtBox25P1.Name = "txtBox25P1";
             txtBox25P1.Size = new Size(91, 67);
             txtBox25P1.TabIndex = 24;
+            txtBox25P1.TextAlign = HorizontalAlignment.Center;
             // 
             // tblPlayer2
             // 
@@ -1033,14 +1060,15 @@
             optComputerBoardP2.Text = "Computer chooses my board";
             optComputerBoardP2.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // frmBingo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1358, 740);
             Controls.Add(tblMain);
-            Name = "Form1";
-            Text = "Form1";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmBingo";
+            Text = "Bingo";
             tblMain.ResumeLayout(false);
             tblMain.PerformLayout();
             tblToolBar.ResumeLayout(false);
