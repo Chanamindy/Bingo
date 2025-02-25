@@ -7,4 +7,4 @@ Two players are presented with a 5x5 board that has to be filled in with letters
 
 **The full spec for the game is in the repo**
 
-![Page](https://github.com/user-attachments/assets/c3462788-e874-4017-9cd6-3fb3f5d304ae)
+![Bingo Wireframe](https://github.com/user-attachments/assets/2eae20ab-1e1e-4484-b898-e4f6915324d9)
