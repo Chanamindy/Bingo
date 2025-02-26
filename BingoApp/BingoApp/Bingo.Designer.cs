@@ -88,13 +88,7 @@
             txtBox24P2 = new TextBox();
             txtBox25P2 = new TextBox();
             tblBoardContainsP1 = new TableLayoutPanel();
-            lblBoardContainsP1 = new Label();
-            optYesP1 = new RadioButton();
-            optNoP1 = new RadioButton();
             tlbBoardContainsP2 = new TableLayoutPanel();
-            lblBoardContainsP2 = new Label();
-            optYesP2 = new RadioButton();
-            optNoP2 = new RadioButton();
             tblPickBoardP1 = new TableLayoutPanel();
             optIPickBoardP1 = new RadioButton();
             optComputerBoardP1 = new RadioButton();
@@ -111,8 +105,6 @@
             tblToolBar.SuspendLayout();
             tblPlayer1.SuspendLayout();
             tblPlayer2.SuspendLayout();
-            tblBoardContainsP1.SuspendLayout();
-            tlbBoardContainsP2.SuspendLayout();
             tblPickBoardP1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tblPickBoardP2.SuspendLayout();
@@ -196,6 +188,7 @@
             optNumbers.AutoSize = true;
             optNumbers.Checked = true;
             optNumbers.Dock = DockStyle.Fill;
+            optNumbers.Enabled = false;
             optNumbers.Location = new Point(985, 3);
             optNumbers.Name = "optNumbers";
             optNumbers.Size = new Size(187, 79);
@@ -208,6 +201,7 @@
             // 
             optLetters.AutoSize = true;
             optLetters.Dock = DockStyle.Fill;
+            optLetters.Enabled = false;
             optLetters.Location = new Point(1178, 3);
             optLetters.Name = "optLetters";
             optLetters.Size = new Size(171, 79);
@@ -265,6 +259,7 @@
             // txtBox1P1
             // 
             txtBox1P1.Dock = DockStyle.Fill;
+            txtBox1P1.Enabled = false;
             txtBox1P1.Location = new Point(4, 4);
             txtBox1P1.Multiline = true;
             txtBox1P1.Name = "txtBox1P1";
@@ -275,6 +270,7 @@
             // txtBox2P1
             // 
             txtBox2P1.Dock = DockStyle.Fill;
+            txtBox2P1.Enabled = false;
             txtBox2P1.Location = new Point(101, 4);
             txtBox2P1.Multiline = true;
             txtBox2P1.Name = "txtBox2P1";
@@ -285,6 +281,7 @@
             // txtBox3P1
             // 
             txtBox3P1.Dock = DockStyle.Fill;
+            txtBox3P1.Enabled = false;
             txtBox3P1.Location = new Point(198, 4);
             txtBox3P1.Multiline = true;
             txtBox3P1.Name = "txtBox3P1";
@@ -295,6 +292,7 @@
             // txtBox4P1
             // 
             txtBox4P1.Dock = DockStyle.Fill;
+            txtBox4P1.Enabled = false;
             txtBox4P1.Location = new Point(295, 4);
             txtBox4P1.Multiline = true;
             txtBox4P1.Name = "txtBox4P1";
@@ -305,6 +303,7 @@
             // txtBox5P1
             // 
             txtBox5P1.Dock = DockStyle.Fill;
+            txtBox5P1.Enabled = false;
             txtBox5P1.Location = new Point(392, 4);
             txtBox5P1.Multiline = true;
             txtBox5P1.Name = "txtBox5P1";
@@ -315,6 +314,7 @@
             // txtBox6P1
             // 
             txtBox6P1.Dock = DockStyle.Fill;
+            txtBox6P1.Enabled = false;
             txtBox6P1.Location = new Point(4, 77);
             txtBox6P1.Multiline = true;
             txtBox6P1.Name = "txtBox6P1";
@@ -325,6 +325,7 @@
             // txtBox7P1
             // 
             txtBox7P1.Dock = DockStyle.Fill;
+            txtBox7P1.Enabled = false;
             txtBox7P1.Location = new Point(101, 77);
             txtBox7P1.Multiline = true;
             txtBox7P1.Name = "txtBox7P1";
@@ -335,6 +336,7 @@
             // txtBox8P1
             // 
             txtBox8P1.Dock = DockStyle.Fill;
+            txtBox8P1.Enabled = false;
             txtBox8P1.Location = new Point(198, 77);
             txtBox8P1.Multiline = true;
             txtBox8P1.Name = "txtBox8P1";
@@ -345,6 +347,7 @@
             // txtBox9P1
             // 
             txtBox9P1.Dock = DockStyle.Fill;
+            txtBox9P1.Enabled = false;
             txtBox9P1.Location = new Point(295, 77);
             txtBox9P1.Multiline = true;
             txtBox9P1.Name = "txtBox9P1";
@@ -355,6 +358,7 @@
             // txtBox10P1
             // 
             txtBox10P1.Dock = DockStyle.Fill;
+            txtBox10P1.Enabled = false;
             txtBox10P1.Location = new Point(392, 77);
             txtBox10P1.Multiline = true;
             txtBox10P1.Name = "txtBox10P1";
@@ -365,6 +369,7 @@
             // txtBox11P1
             // 
             txtBox11P1.Dock = DockStyle.Fill;
+            txtBox11P1.Enabled = false;
             txtBox11P1.Location = new Point(4, 150);
             txtBox11P1.Multiline = true;
             txtBox11P1.Name = "txtBox11P1";
@@ -375,6 +380,7 @@
             // txtBox12P1
             // 
             txtBox12P1.Dock = DockStyle.Fill;
+            txtBox12P1.Enabled = false;
             txtBox12P1.Location = new Point(101, 150);
             txtBox12P1.Multiline = true;
             txtBox12P1.Name = "txtBox12P1";
@@ -386,133 +392,146 @@
             // 
             txtBox13P1.BackColor = Color.Lime;
             txtBox13P1.Dock = DockStyle.Fill;
+            txtBox13P1.Enabled = false;
             txtBox13P1.Location = new Point(198, 150);
             txtBox13P1.Multiline = true;
             txtBox13P1.Name = "txtBox13P1";
             txtBox13P1.ReadOnly = true;
             txtBox13P1.Size = new Size(90, 66);
-            txtBox13P1.TabIndex = 12;
+            txtBox13P1.TabIndex = 30;
             txtBox13P1.Text = "Bingo!";
             txtBox13P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox14P1
             // 
             txtBox14P1.Dock = DockStyle.Fill;
+            txtBox14P1.Enabled = false;
             txtBox14P1.Location = new Point(295, 150);
             txtBox14P1.Multiline = true;
             txtBox14P1.Name = "txtBox14P1";
             txtBox14P1.Size = new Size(90, 66);
-            txtBox14P1.TabIndex = 13;
+            txtBox14P1.TabIndex = 12;
             txtBox14P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox15P1
             // 
             txtBox15P1.Dock = DockStyle.Fill;
+            txtBox15P1.Enabled = false;
             txtBox15P1.Location = new Point(392, 150);
             txtBox15P1.Multiline = true;
             txtBox15P1.Name = "txtBox15P1";
             txtBox15P1.Size = new Size(91, 66);
-            txtBox15P1.TabIndex = 14;
+            txtBox15P1.TabIndex = 13;
             txtBox15P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox16P1
             // 
             txtBox16P1.Dock = DockStyle.Fill;
+            txtBox16P1.Enabled = false;
             txtBox16P1.Location = new Point(4, 223);
             txtBox16P1.Multiline = true;
             txtBox16P1.Name = "txtBox16P1";
             txtBox16P1.Size = new Size(90, 66);
-            txtBox16P1.TabIndex = 15;
+            txtBox16P1.TabIndex = 14;
             txtBox16P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox17P1
             // 
             txtBox17P1.Dock = DockStyle.Fill;
+            txtBox17P1.Enabled = false;
             txtBox17P1.Location = new Point(101, 223);
             txtBox17P1.Multiline = true;
             txtBox17P1.Name = "txtBox17P1";
             txtBox17P1.Size = new Size(90, 66);
-            txtBox17P1.TabIndex = 16;
+            txtBox17P1.TabIndex = 15;
             txtBox17P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox18P1
             // 
             txtBox18P1.Dock = DockStyle.Fill;
+            txtBox18P1.Enabled = false;
             txtBox18P1.Location = new Point(198, 223);
             txtBox18P1.Multiline = true;
             txtBox18P1.Name = "txtBox18P1";
             txtBox18P1.Size = new Size(90, 66);
-            txtBox18P1.TabIndex = 17;
+            txtBox18P1.TabIndex = 16;
             txtBox18P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox19P1
             // 
             txtBox19P1.Dock = DockStyle.Fill;
+            txtBox19P1.Enabled = false;
             txtBox19P1.Location = new Point(295, 223);
             txtBox19P1.Multiline = true;
             txtBox19P1.Name = "txtBox19P1";
             txtBox19P1.Size = new Size(90, 66);
-            txtBox19P1.TabIndex = 18;
+            txtBox19P1.TabIndex = 17;
             txtBox19P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox20P1
             // 
             txtBox20P1.Dock = DockStyle.Fill;
+            txtBox20P1.Enabled = false;
             txtBox20P1.Location = new Point(392, 223);
             txtBox20P1.Multiline = true;
             txtBox20P1.Name = "txtBox20P1";
             txtBox20P1.Size = new Size(91, 66);
-            txtBox20P1.TabIndex = 19;
+            txtBox20P1.TabIndex = 18;
             txtBox20P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox21P1
             // 
             txtBox21P1.Dock = DockStyle.Fill;
+            txtBox21P1.Enabled = false;
             txtBox21P1.Location = new Point(4, 296);
             txtBox21P1.Multiline = true;
             txtBox21P1.Name = "txtBox21P1";
             txtBox21P1.Size = new Size(90, 67);
-            txtBox21P1.TabIndex = 20;
+            txtBox21P1.TabIndex = 19;
             txtBox21P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox22P1
             // 
             txtBox22P1.Dock = DockStyle.Fill;
+            txtBox22P1.Enabled = false;
             txtBox22P1.Location = new Point(101, 296);
             txtBox22P1.Multiline = true;
             txtBox22P1.Name = "txtBox22P1";
             txtBox22P1.Size = new Size(90, 67);
-            txtBox22P1.TabIndex = 21;
+            txtBox22P1.TabIndex = 20;
             txtBox22P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox23P1
             // 
             txtBox23P1.Dock = DockStyle.Fill;
+            txtBox23P1.Enabled = false;
             txtBox23P1.Location = new Point(198, 296);
             txtBox23P1.Multiline = true;
             txtBox23P1.Name = "txtBox23P1";
             txtBox23P1.Size = new Size(90, 67);
-            txtBox23P1.TabIndex = 22;
+            txtBox23P1.TabIndex = 21;
             txtBox23P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox24P1
             // 
             txtBox24P1.Dock = DockStyle.Fill;
+            txtBox24P1.Enabled = false;
             txtBox24P1.Location = new Point(295, 296);
             txtBox24P1.Multiline = true;
             txtBox24P1.Name = "txtBox24P1";
             txtBox24P1.Size = new Size(90, 67);
-            txtBox24P1.TabIndex = 23;
+            txtBox24P1.TabIndex = 22;
             txtBox24P1.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox25P1
             // 
             txtBox25P1.Dock = DockStyle.Fill;
+            txtBox25P1.Enabled = false;
             txtBox25P1.Location = new Point(392, 296);
             txtBox25P1.Multiline = true;
             txtBox25P1.Name = "txtBox25P1";
             txtBox25P1.Size = new Size(91, 67);
-            txtBox25P1.TabIndex = 24;
+            txtBox25P1.TabIndex = 23;
             txtBox25P1.TextAlign = HorizontalAlignment.Center;
             // 
             // tblPlayer2
@@ -565,6 +584,7 @@
             // txtBox1P2
             // 
             txtBox1P2.Dock = DockStyle.Fill;
+            txtBox1P2.Enabled = false;
             txtBox1P2.Location = new Point(4, 4);
             txtBox1P2.Multiline = true;
             txtBox1P2.Name = "txtBox1P2";
@@ -575,6 +595,7 @@
             // txtBox2P2
             // 
             txtBox2P2.Dock = DockStyle.Fill;
+            txtBox2P2.Enabled = false;
             txtBox2P2.Location = new Point(101, 4);
             txtBox2P2.Multiline = true;
             txtBox2P2.Name = "txtBox2P2";
@@ -585,6 +606,7 @@
             // txtBox3P2
             // 
             txtBox3P2.Dock = DockStyle.Fill;
+            txtBox3P2.Enabled = false;
             txtBox3P2.Location = new Point(198, 4);
             txtBox3P2.Multiline = true;
             txtBox3P2.Name = "txtBox3P2";
@@ -595,6 +617,7 @@
             // txtBox4P2
             // 
             txtBox4P2.Dock = DockStyle.Fill;
+            txtBox4P2.Enabled = false;
             txtBox4P2.Location = new Point(295, 4);
             txtBox4P2.Multiline = true;
             txtBox4P2.Name = "txtBox4P2";
@@ -605,6 +628,7 @@
             // txtBox5P2
             // 
             txtBox5P2.Dock = DockStyle.Fill;
+            txtBox5P2.Enabled = false;
             txtBox5P2.Location = new Point(392, 4);
             txtBox5P2.Multiline = true;
             txtBox5P2.Name = "txtBox5P2";
@@ -615,6 +639,7 @@
             // txtBox6P2
             // 
             txtBox6P2.Dock = DockStyle.Fill;
+            txtBox6P2.Enabled = false;
             txtBox6P2.Location = new Point(4, 77);
             txtBox6P2.Multiline = true;
             txtBox6P2.Name = "txtBox6P2";
@@ -625,6 +650,7 @@
             // txtBox7P2
             // 
             txtBox7P2.Dock = DockStyle.Fill;
+            txtBox7P2.Enabled = false;
             txtBox7P2.Location = new Point(101, 77);
             txtBox7P2.Multiline = true;
             txtBox7P2.Name = "txtBox7P2";
@@ -635,6 +661,7 @@
             // txtBox8P2
             // 
             txtBox8P2.Dock = DockStyle.Fill;
+            txtBox8P2.Enabled = false;
             txtBox8P2.Location = new Point(198, 77);
             txtBox8P2.Multiline = true;
             txtBox8P2.Name = "txtBox8P2";
@@ -645,6 +672,7 @@
             // txtBox9P2
             // 
             txtBox9P2.Dock = DockStyle.Fill;
+            txtBox9P2.Enabled = false;
             txtBox9P2.Location = new Point(295, 77);
             txtBox9P2.Multiline = true;
             txtBox9P2.Name = "txtBox9P2";
@@ -655,6 +683,7 @@
             // txtBox10P2
             // 
             txtBox10P2.Dock = DockStyle.Fill;
+            txtBox10P2.Enabled = false;
             txtBox10P2.Location = new Point(392, 77);
             txtBox10P2.Multiline = true;
             txtBox10P2.Name = "txtBox10P2";
@@ -665,6 +694,7 @@
             // txtBox11P2
             // 
             txtBox11P2.Dock = DockStyle.Fill;
+            txtBox11P2.Enabled = false;
             txtBox11P2.Location = new Point(4, 150);
             txtBox11P2.Multiline = true;
             txtBox11P2.Name = "txtBox11P2";
@@ -675,6 +705,7 @@
             // txtBox12P2
             // 
             txtBox12P2.Dock = DockStyle.Fill;
+            txtBox12P2.Enabled = false;
             txtBox12P2.Location = new Point(101, 150);
             txtBox12P2.Multiline = true;
             txtBox12P2.Name = "txtBox12P2";
@@ -686,133 +717,146 @@
             // 
             txtBox13P2.BackColor = Color.Lime;
             txtBox13P2.Dock = DockStyle.Fill;
+            txtBox13P2.Enabled = false;
             txtBox13P2.Location = new Point(198, 150);
             txtBox13P2.Multiline = true;
             txtBox13P2.Name = "txtBox13P2";
             txtBox13P2.ReadOnly = true;
             txtBox13P2.Size = new Size(90, 66);
-            txtBox13P2.TabIndex = 13;
+            txtBox13P2.TabIndex = 30;
             txtBox13P2.Text = "Bingo!";
             txtBox13P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox14P2
             // 
             txtBox14P2.Dock = DockStyle.Fill;
+            txtBox14P2.Enabled = false;
             txtBox14P2.Location = new Point(295, 150);
             txtBox14P2.Multiline = true;
             txtBox14P2.Name = "txtBox14P2";
             txtBox14P2.Size = new Size(90, 66);
-            txtBox14P2.TabIndex = 14;
+            txtBox14P2.TabIndex = 13;
             txtBox14P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox15P2
             // 
             txtBox15P2.Dock = DockStyle.Fill;
+            txtBox15P2.Enabled = false;
             txtBox15P2.Location = new Point(392, 150);
             txtBox15P2.Multiline = true;
             txtBox15P2.Name = "txtBox15P2";
             txtBox15P2.Size = new Size(91, 66);
-            txtBox15P2.TabIndex = 15;
+            txtBox15P2.TabIndex = 14;
             txtBox15P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox16P2
             // 
             txtBox16P2.Dock = DockStyle.Fill;
+            txtBox16P2.Enabled = false;
             txtBox16P2.Location = new Point(4, 223);
             txtBox16P2.Multiline = true;
             txtBox16P2.Name = "txtBox16P2";
             txtBox16P2.Size = new Size(90, 66);
-            txtBox16P2.TabIndex = 16;
+            txtBox16P2.TabIndex = 15;
             txtBox16P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox17P2
             // 
             txtBox17P2.Dock = DockStyle.Fill;
+            txtBox17P2.Enabled = false;
             txtBox17P2.Location = new Point(101, 223);
             txtBox17P2.Multiline = true;
             txtBox17P2.Name = "txtBox17P2";
             txtBox17P2.Size = new Size(90, 66);
-            txtBox17P2.TabIndex = 17;
+            txtBox17P2.TabIndex = 16;
             txtBox17P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox18P2
             // 
             txtBox18P2.Dock = DockStyle.Fill;
+            txtBox18P2.Enabled = false;
             txtBox18P2.Location = new Point(198, 223);
             txtBox18P2.Multiline = true;
             txtBox18P2.Name = "txtBox18P2";
             txtBox18P2.Size = new Size(90, 66);
-            txtBox18P2.TabIndex = 18;
+            txtBox18P2.TabIndex = 17;
             txtBox18P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox19P2
             // 
             txtBox19P2.Dock = DockStyle.Fill;
+            txtBox19P2.Enabled = false;
             txtBox19P2.Location = new Point(295, 223);
             txtBox19P2.Multiline = true;
             txtBox19P2.Name = "txtBox19P2";
             txtBox19P2.Size = new Size(90, 66);
-            txtBox19P2.TabIndex = 19;
+            txtBox19P2.TabIndex = 18;
             txtBox19P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox20P2
             // 
             txtBox20P2.Dock = DockStyle.Fill;
+            txtBox20P2.Enabled = false;
             txtBox20P2.Location = new Point(392, 223);
             txtBox20P2.Multiline = true;
             txtBox20P2.Name = "txtBox20P2";
             txtBox20P2.Size = new Size(91, 66);
-            txtBox20P2.TabIndex = 20;
+            txtBox20P2.TabIndex = 19;
             txtBox20P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox21P2
             // 
             txtBox21P2.Dock = DockStyle.Fill;
+            txtBox21P2.Enabled = false;
             txtBox21P2.Location = new Point(4, 296);
             txtBox21P2.Multiline = true;
             txtBox21P2.Name = "txtBox21P2";
             txtBox21P2.Size = new Size(90, 67);
-            txtBox21P2.TabIndex = 21;
+            txtBox21P2.TabIndex = 20;
             txtBox21P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox22P2
             // 
             txtBox22P2.Dock = DockStyle.Fill;
+            txtBox22P2.Enabled = false;
             txtBox22P2.Location = new Point(101, 296);
             txtBox22P2.Multiline = true;
             txtBox22P2.Name = "txtBox22P2";
             txtBox22P2.Size = new Size(90, 67);
-            txtBox22P2.TabIndex = 22;
+            txtBox22P2.TabIndex = 21;
             txtBox22P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox23P2
             // 
             txtBox23P2.Dock = DockStyle.Fill;
+            txtBox23P2.Enabled = false;
             txtBox23P2.Location = new Point(198, 296);
             txtBox23P2.Multiline = true;
             txtBox23P2.Name = "txtBox23P2";
             txtBox23P2.Size = new Size(90, 67);
-            txtBox23P2.TabIndex = 23;
+            txtBox23P2.TabIndex = 22;
             txtBox23P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox24P2
             // 
             txtBox24P2.Dock = DockStyle.Fill;
+            txtBox24P2.Enabled = false;
             txtBox24P2.Location = new Point(295, 296);
             txtBox24P2.Multiline = true;
             txtBox24P2.Name = "txtBox24P2";
             txtBox24P2.Size = new Size(90, 67);
-            txtBox24P2.TabIndex = 24;
+            txtBox24P2.TabIndex = 23;
             txtBox24P2.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBox25P2
             // 
             txtBox25P2.Dock = DockStyle.Fill;
+            txtBox25P2.Enabled = false;
             txtBox25P2.Location = new Point(392, 296);
             txtBox25P2.Multiline = true;
             txtBox25P2.Name = "txtBox25P2";
             txtBox25P2.Size = new Size(91, 67);
-            txtBox25P2.TabIndex = 25;
+            txtBox25P2.TabIndex = 24;
             txtBox25P2.TextAlign = HorizontalAlignment.Center;
             // 
             // tblBoardContainsP1
@@ -821,9 +865,6 @@
             tblBoardContainsP1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.0815468F));
             tblBoardContainsP1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.4592285F));
             tblBoardContainsP1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.4592285F));
-            tblBoardContainsP1.Controls.Add(lblBoardContainsP1, 0, 0);
-            tblBoardContainsP1.Controls.Add(optYesP1, 1, 0);
-            tblBoardContainsP1.Controls.Add(optNoP1, 2, 0);
             tblBoardContainsP1.Dock = DockStyle.Fill;
             tblBoardContainsP1.Location = new Point(126, 669);
             tblBoardContainsP1.Name = "tblBoardContainsP1";
@@ -832,49 +873,12 @@
             tblBoardContainsP1.Size = new Size(487, 68);
             tblBoardContainsP1.TabIndex = 3;
             // 
-            // lblBoardContainsP1
-            // 
-            lblBoardContainsP1.AutoSize = true;
-            lblBoardContainsP1.Dock = DockStyle.Fill;
-            lblBoardContainsP1.Location = new Point(3, 0);
-            lblBoardContainsP1.Name = "lblBoardContainsP1";
-            lblBoardContainsP1.Size = new Size(271, 68);
-            lblBoardContainsP1.TabIndex = 0;
-            lblBoardContainsP1.Text = "My board contains the selection:";
-            // 
-            // optYesP1
-            // 
-            optYesP1.AutoSize = true;
-            optYesP1.Enabled = false;
-            optYesP1.Location = new Point(280, 3);
-            optYesP1.Name = "optYesP1";
-            optYesP1.Size = new Size(51, 24);
-            optYesP1.TabIndex = 1;
-            optYesP1.TabStop = true;
-            optYesP1.Text = "Yes";
-            optYesP1.UseVisualStyleBackColor = true;
-            // 
-            // optNoP1
-            // 
-            optNoP1.AutoSize = true;
-            optNoP1.Enabled = false;
-            optNoP1.Location = new Point(384, 3);
-            optNoP1.Name = "optNoP1";
-            optNoP1.Size = new Size(50, 24);
-            optNoP1.TabIndex = 2;
-            optNoP1.TabStop = true;
-            optNoP1.Text = "No";
-            optNoP1.UseVisualStyleBackColor = true;
-            // 
             // tlbBoardContainsP2
             // 
             tlbBoardContainsP2.ColumnCount = 3;
             tlbBoardContainsP2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.2195168F));
             tlbBoardContainsP2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.3902454F));
             tlbBoardContainsP2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.3902454F));
-            tlbBoardContainsP2.Controls.Add(lblBoardContainsP2, 0, 0);
-            tlbBoardContainsP2.Controls.Add(optYesP2, 1, 0);
-            tlbBoardContainsP2.Controls.Add(optNoP2, 2, 0);
             tlbBoardContainsP2.Dock = DockStyle.Fill;
             tlbBoardContainsP2.Location = new Point(742, 669);
             tlbBoardContainsP2.Name = "tlbBoardContainsP2";
@@ -882,40 +886,6 @@
             tlbBoardContainsP2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlbBoardContainsP2.Size = new Size(487, 68);
             tlbBoardContainsP2.TabIndex = 4;
-            // 
-            // lblBoardContainsP2
-            // 
-            lblBoardContainsP2.AutoSize = true;
-            lblBoardContainsP2.Dock = DockStyle.Fill;
-            lblBoardContainsP2.Location = new Point(3, 0);
-            lblBoardContainsP2.Name = "lblBoardContainsP2";
-            lblBoardContainsP2.Size = new Size(243, 68);
-            lblBoardContainsP2.TabIndex = 0;
-            lblBoardContainsP2.Text = "My board contains the selection:";
-            // 
-            // optYesP2
-            // 
-            optYesP2.AutoSize = true;
-            optYesP2.Enabled = false;
-            optYesP2.Location = new Point(252, 3);
-            optYesP2.Name = "optYesP2";
-            optYesP2.Size = new Size(51, 24);
-            optYesP2.TabIndex = 1;
-            optYesP2.TabStop = true;
-            optYesP2.Text = "Yes";
-            optYesP2.UseVisualStyleBackColor = true;
-            // 
-            // optNoP2
-            // 
-            optNoP2.AutoSize = true;
-            optNoP2.Enabled = false;
-            optNoP2.Location = new Point(370, 3);
-            optNoP2.Name = "optNoP2";
-            optNoP2.Size = new Size(50, 24);
-            optNoP2.TabIndex = 2;
-            optNoP2.TabStop = true;
-            optNoP2.Text = "No";
-            optNoP2.UseVisualStyleBackColor = true;
             // 
             // tblPickBoardP1
             // 
@@ -936,6 +906,7 @@
             // 
             optIPickBoardP1.AutoSize = true;
             optIPickBoardP1.Checked = true;
+            optIPickBoardP1.Enabled = false;
             optIPickBoardP1.Location = new Point(3, 3);
             optIPickBoardP1.Name = "optIPickBoardP1";
             optIPickBoardP1.Size = new Size(133, 24);
@@ -947,6 +918,7 @@
             // optComputerBoardP1
             // 
             optComputerBoardP1.AutoSize = true;
+            optComputerBoardP1.Enabled = false;
             optComputerBoardP1.Location = new Point(246, 3);
             optComputerBoardP1.Name = "optComputerBoardP1";
             optComputerBoardP1.Size = new Size(221, 24);
@@ -999,6 +971,7 @@
             // btnPick
             // 
             btnPick.Dock = DockStyle.Fill;
+            btnPick.Enabled = false;
             btnPick.Location = new Point(470, 3);
             btnPick.Name = "btnPick";
             btnPick.Size = new Size(186, 46);
@@ -1016,6 +989,7 @@
             // 
             // btnBoardsAreReady
             // 
+            btnBoardsAreReady.Enabled = false;
             btnBoardsAreReady.Location = new Point(3, 3);
             btnBoardsAreReady.Name = "btnBoardsAreReady";
             btnBoardsAreReady.Size = new Size(138, 46);
@@ -1042,6 +1016,7 @@
             // 
             optIPickBoardP2.AutoSize = true;
             optIPickBoardP2.Checked = true;
+            optIPickBoardP2.Enabled = false;
             optIPickBoardP2.Location = new Point(3, 3);
             optIPickBoardP2.Name = "optIPickBoardP2";
             optIPickBoardP2.Size = new Size(133, 24);
@@ -1053,6 +1028,7 @@
             // optComputerBoardP2
             // 
             optComputerBoardP2.AutoSize = true;
+            optComputerBoardP2.Enabled = false;
             optComputerBoardP2.Location = new Point(246, 3);
             optComputerBoardP2.Name = "optComputerBoardP2";
             optComputerBoardP2.Size = new Size(221, 24);
@@ -1077,10 +1053,6 @@
             tblPlayer1.PerformLayout();
             tblPlayer2.ResumeLayout(false);
             tblPlayer2.PerformLayout();
-            tblBoardContainsP1.ResumeLayout(false);
-            tblBoardContainsP1.PerformLayout();
-            tlbBoardContainsP2.ResumeLayout(false);
-            tlbBoardContainsP2.PerformLayout();
             tblPickBoardP1.ResumeLayout(false);
             tblPickBoardP1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -1102,12 +1074,6 @@
         private TableLayoutPanel tblPlayer2;
         private TableLayoutPanel tblBoardContainsP1;
         private TableLayoutPanel tlbBoardContainsP2;
-        private Label lblBoardContainsP1;
-        private Label lblBoardContainsP2;
-        private RadioButton optYesP1;
-        private RadioButton optNoP1;
-        private RadioButton optYesP2;
-        private RadioButton optNoP2;
         private TextBox txtBox1P2;
         private TextBox txtBox2P2;
         private TextBox txtBox3P2;
