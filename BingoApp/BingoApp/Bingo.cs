@@ -296,6 +296,7 @@ namespace BingoApp
                         lsttxtPlayer2[i].Text = GetRandomLetter();
                     }
                 }
+//AS It already said bingo from the beginning no?
                 txtBox13P2.Text = "Bingo!";
                 SetListReadOnly(lsttxtPlayer2, true);
             }
