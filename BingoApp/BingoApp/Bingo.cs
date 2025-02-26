@@ -251,7 +251,8 @@ namespace BingoApp
                 }
             }
         }
-
+//AS Move code out of all event handlers into procedures and call it from event handlers.
+//AS The following two event handlers should be moved into 1 procedure and pass in a param to know if you are referring to p1 or p2, that way the code is only written once.
         private void OptNumbers_Click(object? sender, EventArgs e)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
@@ -276,7 +277,7 @@ namespace BingoApp
         {
             return gamestatus == Gstatus;
         }
-
+ //AS Same for the following 2 procedures.
         private void OptComputerBoardP2_Click(object? sender, EventArgs e)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
@@ -322,7 +323,7 @@ namespace BingoApp
                 SetListReadOnly(lsttxtPlayer1, true);
             }
         }
-
+//AS Same for the following 2 procedures.
         private void OptIPickBoardP2_Click(object? sender, EventArgs e)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
