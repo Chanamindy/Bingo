@@ -399,6 +399,7 @@
             txtBox13P1.ReadOnly = true;
             txtBox13P1.Size = new Size(90, 66);
             txtBox13P1.TabIndex = 30;
+            txtBox13P1.TabStop = false;
             txtBox13P1.Text = "Bingo!";
             txtBox13P1.TextAlign = HorizontalAlignment.Center;
             // 
@@ -724,6 +725,7 @@
             txtBox13P2.ReadOnly = true;
             txtBox13P2.Size = new Size(90, 66);
             txtBox13P2.TabIndex = 30;
+            txtBox13P2.TabStop = false;
             txtBox13P2.Text = "Bingo!";
             txtBox13P2.TextAlign = HorizontalAlignment.Center;
             // 

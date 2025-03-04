@@ -117,7 +117,7 @@ namespace BingoApp
         private void DisplayGameStatus()
         {
             string msg = "Click Start to begin the Game.";
-            string modemsg = gamemode == GameModeEnum.Number ? "Pick from Numbers 1-50." : "Pick any Upper Case Letter.";
+            string modemsg = gamemode == GameModeEnum.Number ? "Pick from Numbers 1-50." : "Pick any letter from A-Z.";
 
             switch (gamestatus)
             {
@@ -153,6 +153,9 @@ namespace BingoApp
                 SetBingoBox(lst);
             });
             lstallradiobuttons.ForEach(lst => EnableDisableRadioButtons(lst, true));
+            optNumbers.Checked = true;
+            gamemode = GameModeEnum.Number;
+            DisplayTextbtnPick();
             optIPickBoardP1.Checked = true;
             SetListReadOnly(lsttxtPlayer1, false);
             SetBingoBox(lsttxtPlayer1);
@@ -170,6 +173,7 @@ namespace BingoApp
                 DisplayGameStatus();
                 lstalltxtboxes.ForEach(lst => SetListReadOnly(lst, true));
                 EnableDisableButtons(btnPick, true);
+                lstallradiobuttons.ForEach(lst => EnableDisableRadioButtons(lst, false));
             }
         }
 
@@ -221,15 +225,15 @@ namespace BingoApp
         {
             if (IsGameStatus(GameStatusEnum.Playing))
             {
-                if (lsttxtPlayer1.Where(txt => txt.Text == lblChosenNumOrLetter.Text).Count() > 0)
+                if (lsttxtPlayer1.Where(txt => txt.Text.ToUpper() == lblChosenNumOrLetter.Text).Count() > 0)
                 {
-                    var ListContainingNumLetterP1 = lsttxtPlayer1.Where(txt => txt.Text == lblChosenNumOrLetter.Text).ToList();
+                    var ListContainingNumLetterP1 = lsttxtPlayer1.Where(txt => txt.Text.ToUpper() == lblChosenNumOrLetter.Text).ToList();
                     ListContainingNumLetterP1.ForEach(txt => txt.BackColor = Color.Lime);
                 }
 
-                if (lsttxtPlayer2.Where(txt => txt.Text == lblChosenNumOrLetter.Text).Count() > 0)
+                if (lsttxtPlayer2.Where(txt => txt.Text.ToUpper() == lblChosenNumOrLetter.Text).Count() > 0)
                 {
-                    var ListContainingNumLetterP2 = lsttxtPlayer2.Where(txt => txt.Text == lblChosenNumOrLetter.Text).ToList();
+                    var ListContainingNumLetterP2 = lsttxtPlayer2.Where(txt => txt.Text.ToUpper() == lblChosenNumOrLetter.Text).ToList();
                     ListContainingNumLetterP2.ForEach(txt => txt.BackColor = Color.Lime);
                 }
             }
@@ -253,32 +257,34 @@ namespace BingoApp
         }
 //AS Move code out of all event handlers into procedures and call it from event handlers.
 //AS The following two event handlers should be moved into 1 procedure and pass in a param to know if you are referring to p1 or p2, that way the code is only written once.
-        private void OptNumbers_Click(object? sender, EventArgs e)
+
+        private void ClickNumberLetter(GameModeEnum gamemodeclicked)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
             {
-                gamemode = GameModeEnum.Number;
+                gamemode = gamemodeclicked;
                 DisplayTextbtnPick();
                 DisplayGameStatus();
             }
+        }
+
+        private void OptNumbers_Click(object? sender, EventArgs e)
+        {
+            ClickNumberLetter(GameModeEnum.Number);
         }
         
         private void OptLetters_Click(object? sender, EventArgs e)
         {
-            if (IsGameStatus(GameStatusEnum.PickModeBoard))
-            {
-                gamemode = GameModeEnum.Letter;
-                DisplayTextbtnPick();
-                DisplayGameStatus();
-            }
+            ClickNumberLetter(GameModeEnum.Letter);
         }
-
+        
         private bool IsGameStatus(GameStatusEnum Gstatus)
         {
             return gamestatus == Gstatus;
         }
- //AS Same for the following 2 procedures.
-        private void OptComputerBoardP2_Click(object? sender, EventArgs e)
+
+//AS Same for the following 2 procedures.
+        private void OptComputerBoardClicked(List<TextBox> lsttxt)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
             {
@@ -286,65 +292,54 @@ namespace BingoApp
                 {
                     for (int i = 0; i < 25; i++)
                     {
-                        lsttxtPlayer2[i].Text = GetRandomNumber();
+                        lsttxt[i].Text = GetRandomNumber();
                     }
                 }
                 else if (gamemode == GameModeEnum.Letter)
                 {
                     for (int i = 0; i < 25; i++)
                     {
-                        lsttxtPlayer2[i].Text = GetRandomLetter();
+                        lsttxt[i].Text = GetRandomLetter();
                     }
                 }
-//AS It already said bingo from the beginning no?
-                txtBox13P2.Text = "Bingo!";
-                SetListReadOnly(lsttxtPlayer2, true);
+                lsttxt[12].Text = "Bingo!";
+                SetListReadOnly(lsttxt, true);
             }
+        }
+
+        private void OptComputerBoardP2_Click(object? sender, EventArgs e)
+        {
+            OptComputerBoardClicked(lsttxtPlayer2);
+//AS It already said bingo from the beginning no?
+//CMH It does say it in the beginning but when you press this button it clears out all the boxes so then it has to say Bingo again.
         }
 
         private void OptComputerBoardP1_Click(object? sender, EventArgs e)
         {
-            if (IsGameStatus(GameStatusEnum.PickModeBoard))
-            {
-                if (gamemode == GameModeEnum.Number)
-                {
-                    for (int i = 0; i < 25; i++)
-                    {
-                        lsttxtPlayer1[i].Text = GetRandomNumber();
-                    }
-                }
-                else if (gamemode == GameModeEnum.Letter)
-                {
-                    for (int i = 0; i < 25; i++)
-                    {
-                        lsttxtPlayer1[i].Text = GetRandomLetter();
-                    }
-                }
-                txtBox13P1.Text = "Bingo!";
-                SetListReadOnly(lsttxtPlayer1, true);
-            }
+            OptComputerBoardClicked(lsttxtPlayer1);
         }
+        
 //AS Same for the following 2 procedures.
-        private void OptIPickBoardP2_Click(object? sender, EventArgs e)
+        private void OptIPickBoardClicked(List<TextBox> lsttxt)
         {
             if (IsGameStatus(GameStatusEnum.PickModeBoard))
             {
-                lsttxtPlayer2.ForEach(txt => txt.Text = "");
-                SetListReadOnly(lsttxtPlayer2, false);
-                SetBingoBox(lsttxtPlayer2);
+                lsttxt.ForEach(txt => txt.Text = "");
+                SetListReadOnly(lsttxt, false);
+                SetBingoBox(lsttxt);
             }
+        }
+
+        private void OptIPickBoardP2_Click(object? sender, EventArgs e)
+        {
+            OptIPickBoardClicked(lsttxtPlayer2);
         }
 
         private void OptIPickBoardP1_Click(object? sender, EventArgs e)
         {
-            if (IsGameStatus(GameStatusEnum.PickModeBoard))
-            {
-                lsttxtPlayer1.ForEach(txt => txt.Text = "");
-                SetListReadOnly(lsttxtPlayer1, false);
-                SetBingoBox(lsttxtPlayer1);
-            }
+            OptIPickBoardClicked(lsttxtPlayer1);
         }
-
+        
         private void BtnStart_Click(object? sender, EventArgs e)
         {
             StartTheGame();
