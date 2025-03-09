@@ -271,13 +271,29 @@ namespace BingoApp
         private void OptNumbers_Click(object? sender, EventArgs e)
         {
             ClickNumberLetter(GameModeEnum.Number);
+            FillBothBoardsIfChecked();
         }
         
         private void OptLetters_Click(object? sender, EventArgs e)
         {
             ClickNumberLetter(GameModeEnum.Letter);
+            FillBothBoardsIfChecked();
+            
         }
         
+        private void FillBothBoardsIfChecked()
+        {
+            if (optComputerBoardP1.Checked == true)
+            {
+                OptComputerBoardClicked(lsttxtPlayer1);
+            }
+
+            if (optComputerBoardP2.Checked == true)
+            {
+                OptComputerBoardClicked(lsttxtPlayer2);
+            }
+        }
+
         private bool IsGameStatus(GameStatusEnum Gstatus)
         {
             return gamestatus == Gstatus;
