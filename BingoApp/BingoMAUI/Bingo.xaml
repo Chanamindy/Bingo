@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BingoMAUI.Bingo"
+             Title="Bingo">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="LightGray"/>
+            <Setter Property="FontFamily" Value="BookAntiqua"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="KristenITC"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="BackgroundColor" Value="CornflowerBlue"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <Grid ColumnDefinitions="*" RowDefinitions="*,*,8*">
+        <Grid ColumnDefinitions="3*,8*,3*" RowDefinitions="*" Grid.Column="0" Grid.Row="0">
+            <Button x:Name="btnStart" Text="Start" Grid.Column="0"/>
+            <Label x:Name="lblMessage" Grid.Column="1"/>
+            <HorizontalStackLayout Grid.Column="2">
+                <RadioButton x:Name="optNumber" Content="Number" IsChecked="True" VerticalOptions="Center"/>
+                <RadioButton x:Name="optLetter" Content="Letter" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <Grid ColumnDefinitions="3*,8*,3*" RowDefinitions="*" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="btnBoardsAreReady" Text="Boards are ready" Grid.Column="0"/>
+            <Button x:Name="btnPick" HorizontalOptions="Center" Grid.Column="1"/>
+            <Label x:Name="lblChosenNumOrLetter" Grid.Column="2"/>
+        </Grid>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*" Grid.Column="0" Grid.Row="2">
+            <Grid ColumnDefinitions="*" RowDefinitions="*,*,6*" Grid.Column="0" Grid.Row="0">
+                <Label x:Name="lblPlayer1" Text="Player 1" Grid.Row="0" VerticalOptions="End" FontAttributes="Bold" FontSize="25"/>
+                <HorizontalStackLayout Grid.Row="1">
+                    <RadioButton x:Name="optIPickBoardP1" Content="I pick my board" IsChecked="True"/>
+                    <RadioButton x:Name="optComputerBoardP1" Content="Computer chooses my board"/>
+                </HorizontalStackLayout>
+                <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*" Grid.Row="2">
+                    <Entry x:Name="txtBox1P1" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="txtBox2P1" Grid.Column="1" Grid.Row="0"/>
+                    <Entry x:Name="txtBox3P1" Grid.Column="2" Grid.Row="0"/>
+                    <Entry x:Name="txtBox4P1" Grid.Column="3" Grid.Row="0"/>
+                    <Entry x:Name="txtBox5P1" Grid.Column="4" Grid.Row="0"/>
+
+                    <Entry x:Name="txtBox6P1" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="txtBox7P1" Grid.Column="1" Grid.Row="1"/>
+                    <Entry x:Name="txtBox8P1" Grid.Column="2" Grid.Row="1"/>
+                    <Entry x:Name="txtBox9P1" Grid.Column="3" Grid.Row="1"/>
+                    <Entry x:Name="txtBox10P1" Grid.Column="4" Grid.Row="1"/>
+
+                    <Entry x:Name="txtBox11P1" Grid.Column="0" Grid.Row="2"/>
+                    <Entry x:Name="txtBox12P1" Grid.Column="1" Grid.Row="2"/>
+                    <Entry x:Name="txtBox13P1" Text="Bingo!" BackgroundColor="Lime" Grid.Column="2" Grid.Row="2"/>
+                    <Entry x:Name="txtBox14P1" Grid.Column="3" Grid.Row="2"/>
+                    <Entry x:Name="txtBox15P1" Grid.Column="4" Grid.Row="2"/>
+
+                    <Entry x:Name="txtBox16P1" Grid.Column="0" Grid.Row="3"/>
+                    <Entry x:Name="txtBox17P1" Grid.Column="1" Grid.Row="3"/>
+                    <Entry x:Name="txtBox18P1" Grid.Column="2" Grid.Row="3"/>
+                    <Entry x:Name="txtBox19P1" Grid.Column="3" Grid.Row="3"/>
+                    <Entry x:Name="txtBox20P1" Grid.Column="4" Grid.Row="3"/>
+
+                    <Entry x:Name="txtBox21P1" Grid.Column="0" Grid.Row="4"/>
+                    <Entry x:Name="txtBox22P1" Grid.Column="1" Grid.Row="4"/>
+                    <Entry x:Name="txtBox23P1" Grid.Column="2" Grid.Row="4"/>
+                    <Entry x:Name="txtBox24P1" Grid.Column="3" Grid.Row="4"/>
+                    <Entry x:Name="txtBox25P1" Grid.Column="4" Grid.Row="4"/>
+                </Grid>
+            </Grid>
+
+            <Grid ColumnDefinitions="*" RowDefinitions="*,*,6*" Grid.Column="1" Grid.Row="0">
+                <Label x:Name="lblPlayer2" Text="Player 2" Grid.Row="0" VerticalOptions="End" FontAttributes="Bold" FontSize="25"/>
+                <HorizontalStackLayout Grid.Row="1">
+                    <RadioButton x:Name="optIPickBoardP2" Content="I pick my board" IsChecked="True"/>
+                    <RadioButton x:Name="optComputerBoardP2" Content="Computer chooses my board"/>
+                </HorizontalStackLayout>
+                <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*" Grid.Row="2">
+                    <Entry x:Name="txtBox1P2" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="txtBox2P2" Grid.Column="1" Grid.Row="0"/>
+                    <Entry x:Name="txtBox3P2" Grid.Column="2" Grid.Row="0"/>
+                    <Entry x:Name="txtBox4P2" Grid.Column="3" Grid.Row="0"/>
+                    <Entry x:Name="txtBox5P2" Grid.Column="4" Grid.Row="0"/>
+
+                    <Entry x:Name="txtBox6P2" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="txtBox7P2" Grid.Column="1" Grid.Row="1"/>
+                    <Entry x:Name="txtBox8P2" Grid.Column="2" Grid.Row="1"/>
+                    <Entry x:Name="txtBox9P2" Grid.Column="3" Grid.Row="1"/>
+                    <Entry x:Name="txtBox10P2" Grid.Column="4" Grid.Row="1"/>
+
+                    <Entry x:Name="txtBox11P2" Grid.Column="0" Grid.Row="2"/>
+                    <Entry x:Name="txtBox12P2" Grid.Column="1" Grid.Row="2"/>
+                    <Entry x:Name="txtBox13P2" Text="Bingo!" BackgroundColor="Lime" Grid.Column="2" Grid.Row="2"/>
+                    <Entry x:Name="txtBox14P2" Grid.Column="3" Grid.Row="2"/>
+                    <Entry x:Name="txtBox15P2" Grid.Column="4" Grid.Row="2"/>
+
+                    <Entry x:Name="txtBox16P2" Grid.Column="0" Grid.Row="3"/>
+                    <Entry x:Name="txtBox17P2" Grid.Column="1" Grid.Row="3"/>
+                    <Entry x:Name="txtBox18P2" Grid.Column="2" Grid.Row="3"/>
+                    <Entry x:Name="txtBox19P2" Grid.Column="3" Grid.Row="3"/>
+                    <Entry x:Name="txtBox20P2" Grid.Column="4" Grid.Row="3"/>
+
+                    <Entry x:Name="txtBox21P2" Grid.Column="0" Grid.Row="4"/>
+                    <Entry x:Name="txtBox22P2" Grid.Column="1" Grid.Row="4"/>
+                    <Entry x:Name="txtBox23P2" Grid.Column="2" Grid.Row="4"/>
+                    <Entry x:Name="txtBox24P2" Grid.Column="3" Grid.Row="4"/>
+                    <Entry x:Name="txtBox25P2" Grid.Column="4" Grid.Row="4"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
